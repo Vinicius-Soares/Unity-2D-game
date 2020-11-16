@@ -4,23 +4,25 @@ using UnityEngine;
 
 public class Apple : MonoBehaviour
 {
+    private SpriteRenderer sr;
+    private CircleCollider2D circle;
+
+    public GameObject item_collected;
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        sr = GetComponent<SpriteRenderer>();
+        circle = GetComponent<CircleCollider2D>();
     }
 
     void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            sr.enabled = false;
+            circle.enabled = false;
+            item_collected.SetActive(true);
+            Destroy(gameObject, 0.3f);
         }
     }
 }
