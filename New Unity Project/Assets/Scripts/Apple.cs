@@ -8,6 +8,7 @@ public class Apple : MonoBehaviour
     private CircleCollider2D circle;
 
     public GameObject item_collected;
+    public int Score;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,10 @@ public class Apple : MonoBehaviour
             sr.enabled = false;
             circle.enabled = false;
             item_collected.SetActive(true);
+
+            Game_Controller.instance.TotalScore += Score;
+            Game_Controller.instance.UpdateScoreText();
+
             Destroy(gameObject, 0.3f);
         }
     }
