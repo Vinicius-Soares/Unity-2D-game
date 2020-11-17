@@ -81,7 +81,9 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.tag == "Hazard")
         {
-            Debug.Log("touched hazard");
+            Game_Controller.instance.GameOver();
+            
+            Destroy(gameObject);
         }
     }
 

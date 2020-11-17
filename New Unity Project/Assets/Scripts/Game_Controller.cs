@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Game_Controller : MonoBehaviour
 {
     public int TotalScore;
     public Text scoreText;
+    public GameObject gameOver;
     public static Game_Controller instance;
     // Start is called before the first frame update
     void Start()
@@ -17,5 +19,15 @@ public class Game_Controller : MonoBehaviour
     public void UpdateScoreText()
     {
         scoreText.text = TotalScore.ToString();
+    }
+
+    public void GameOver()
+    {
+        gameOver.SetActive(true);
+    }
+
+    public void RestartCurrentLevel()
+    {
+         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
