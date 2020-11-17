@@ -78,6 +78,11 @@ public class Player : MonoBehaviour
             anim.SetBool("jump", false);
             anim.SetBool("walk", true);
         }
+
+        if (collision.gameObject.tag == "Hazard")
+        {
+            Debug.Log("touched hazard");
+        }
     }
 
     void OnCollisionExit2D(Collision2D collision)
