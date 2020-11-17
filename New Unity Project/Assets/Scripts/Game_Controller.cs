@@ -30,4 +30,9 @@ public class Game_Controller : MonoBehaviour
     {
          SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void NextLevel(string nextLevel)
+    {
+        SceneManager.LoadScene(nextLevel);
+    }
 }
