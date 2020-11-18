@@ -21,20 +21,15 @@ public class Falling_Platform : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Invoke("falling",fallingTime);
+            Invoke("Falling",fallingTime);
+            
         }
     }
 
-     void OnTriggerEnter2D(Collider2D collider)
-    {
-        if(collider.gameObject.layer == 9)
-        {
-            Destroy(gameObject);
-        }
-    }
-    void falling()
+    void Falling()
     {
         joint.enabled = false;
         coll.isTrigger = true;
+        Destroy(gameObject, 1f);
     }
 }
