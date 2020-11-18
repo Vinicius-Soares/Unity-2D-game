@@ -10,7 +10,6 @@ public class Game_Controller : MonoBehaviour
     public Text scoreText;
     public GameObject gameOver;
     public static Game_Controller instance;
-    // Start is called before the first frame update
     void Start()
     {
         instance = this;
